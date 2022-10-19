@@ -1,5 +1,8 @@
 {
     "imports" : {
         
+        "YAML" : "https://deno.land/std@0.160.0/encoding/yaml.ts" ,
+        
+        "INI" : "https://deno.land/x/ini@v2.1.0/mod.ts"
     }
 }
