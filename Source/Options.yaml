@@ -1,9 +1,9 @@
 
-Telemetry:
+Telemetry :
     
-    Description : Disable all mozilla telemetry
+    Description : Disable all telemetry
     
-    Values:
+    Values :
         
         -   Recommended : false
             Id : browser.pingcentre.telemetry
@@ -11,13 +11,151 @@ Telemetry:
         -   Recommended : false
             Id : devtools.onboarding.telemetry-logged
 
+        -   Recommended : false
+            Id : media.wmf.deblacklisting-for-telemetry-in-gpu-process
+        
+        -   Recommended : false
+            Id : browser.newtabpage.activity-stream.feeds.telemetry
+        
+        -   Recommended : false
+            Id : browser.newtabpage.activity-stream.telemetry
 
-Referrer:
+        -   Recommended : false
+            Id : toolkit.telemetry.archive.enabled
+
+        -   Recommended : false
+            Id : toolkit.telemetry.bhrping.enabled
+
+        -   Recommended : false
+            Id : toolkit.telemetry.firstshutdownping.enabled
+
+        -   Recommended : false
+            Id : toolkit.telemetry.hybridcontent.enabled
+
+        -   Recommended : false
+            Id : toolkit.telemetry.newprofileping.enabled
+            
+        -   Recommended : false
+            Id : toolkit.telemetry.unified
+
+        -   Recommended : false
+            Id : toolkit.telemetry.updateping.enabled
+
+        -   Recommended : false
+            Id : toolkit.telemetry.shutdownpingsender.enabled
+
+
+Referrer :
     
     Description : Tells website where you came from. Disabling may break some sites.
     
-    Values:
+    Values :
         
         -   Recommended : 0
             Choices : 0 , 1 , 2
             Id : network.http.sendRefererHeader
+
+        -   Recommended : false
+            Id : network.http.sendSecureXSiteReferrer
+        
+        -   Recommended : true
+            Id : network.http.referer.spoofSource
+        
+        -   Recommended : true
+            Id : network.IDN_show_punycode
+        
+        -   Recommended : false
+            Id : network.cookie.alwaysAcceptSessionCookies
+
+Browser :
+    
+    Description : Disable disk caching, formfill, ping sending, and geoip
+
+    Values :
+
+        -   Recommended : false
+            Id: browser.cache.disk.enable
+
+        -   Recommended : false
+            Id : browser.cache.disk_cache_ssl
+
+        -   Recommended : false
+            Id : browser.cache.memory.enable
+
+        -   Recommended : false
+            Id : browser.cache.offline.enable
+
+        -   Recommended : false
+            Id : browser.cache.insecure.enable
+
+        -   Recommended : false
+            Id : browser.formfil.enable
+
+        -   Recommended : ""
+            Id : browser.search.geoip.url
+
+        -   Recommended : false
+            Id : browser.send_pings
+
+        -   Recommended : true
+            Id : browser.send_pings.require_same_host
+
+DOM :
+
+    Description : Disable control over your right-click and clipboard, battery percentage
+
+    Values : 
+
+        -   Recommended : false
+            Id : dom.event.clipboardevents.enabled
+
+        -   Recommended : false
+            Id : dom.battery.enabled
+
+        -   Recommended : false
+            Id : dom.event.contextmenu.enabled
+
+Security : 
+
+    Description : Require safe SSL negotiation, disable 0rtt data and false SSL starts, and isolate firstparty
+
+    Values : 
+        
+        -   Recommended : false
+            Id : security.ssl.enable_false_start
+        
+        -   Recommended : true
+            Id : security.ssl.require_safe_negotiation
+        
+        -   Recommended : false
+            Id : security.tls.enable_0rtt_data
+
+        -   Recommended : true
+            Id : privacy.firstparty.isolate
+        
+        -   Recommended : false
+            Id : media.peerconnection.enabled
+
+Geo : 
+    
+    Description : Disable geolocation
+
+    Value : 
+
+        -   Recommended : false
+            Id : geo.enabled
+        
+        -   Recommended : ""
+            Id : geo.wifi.uri
+
+Plugin :
+
+    Description : Disable scanning for plugins for fingerprint or detecting adblock, and disable site reading installed plugins.
+
+    Value : 
+
+        -   Recommended : false
+            Id : plugin.scan.plid.all
+        
+        -   Recommended : ""
+            Id : plugins.enumerable_names
