@@ -15,8 +15,8 @@ const directory =
 export const Options =
     join(directory,'Options.yaml');
     
-export const Mozilla =
-    join(home,'.mozilla');
+export const Firefox =
+    join(home,'.mozilla','firefox');
     
 export const Profiles =
-    join(Mozilla,'profiles.ini');
+    join(Firefox,'profiles.ini');

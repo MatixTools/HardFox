@@ -1,9 +1,9 @@
-#!/usr/bin/env -S deno run --allow-env=HOME --allow-read=Source/Options.yaml --importmap=Source/ImportMap.json
+#!/usr/bin/env -S deno run --allow-env=HOME --allow-read=Source/Options.yaml,${HOME}/.mozilla/firefox/profiles.ini --importmap=Source/ImportMap.json
 
 
-import { parse as parseYAML } from 'YAML'
-import { parse as parseINI } from 'INI'
 import * as Paths from './Paths.js'
+import { parse } from 'YAML'
+import loadProfiles from './Profiles.js'
 
 
 const { clear , log } = console;
@@ -14,6 +14,11 @@ clear();
 log('Hardening the Fiery Fox')
 
 
-const options = parseYAML(await Deno.readTextFile(Paths.Options));
+const options = parse(await Deno.readTextFile(Paths.Options));
 
 log(options);
+
+
+const profiles = await loadProfiles();
+
+log('Profiles',profiles);
