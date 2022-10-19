@@ -1,0 +1,23 @@
+
+Telemetry:
+    
+    Description : Disable all mozilla telemetry
+    
+    Values:
+        
+        -   Recommended : false
+            Id : browser.pingcentre.telemetry
+            
+        -   Recommended : false
+            Id : devtools.onboarding.telemetry-logged
+
+
+Referrer:
+    
+    Description : Tells website where you came from. Disabling may break some sites.
+    
+    Values:
+        
+        -   Recommended : 0
+            Choices : 0 , 1 , 2
+            Id : network.http.sendRefererHeader
