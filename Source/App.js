@@ -3,7 +3,7 @@
 
 import { Background , AccentA , AccentB , Font } from './Colors.js'
 import { bgRgb24 , rgb24 } from 'Color'
-import loadProfiles from './Profiles.js'
+import loadProfiles from './Profiles/Load.js'
 import * as Paths from './Paths.js'
 import { parse } from 'YAML'
 
@@ -21,6 +21,5 @@ const options = parse(await Deno.readTextFile(Paths.Options));
 log(options);
 
 
-const profiles = await loadProfiles();
-
-log('Profiles',profiles);
+for ( const profile of await loadProfiles() )
+    log('Profile',profile.name,profile.path);
