@@ -1,7 +1,7 @@
 
 Telemetry :
     
-    Description : Disable all telemetry
+    Description : Disable all Mozilla telemetry.
     
     Values :
         
@@ -44,35 +44,59 @@ Telemetry :
         -   Recommended : false
             Id : toolkit.telemetry.shutdownpingsender.enabled
 
+Punycode :
+    
+    Description : Shows the raw form of urls to help protect against character spoofing of urls.
+    
+    Values :
+        
+        -   Recommended : true
+            Id : network.IDN_show_punycode
 
 Referrer :
     
-    Description : Tells website where you came from. Disabling may break some sites.
+    Description : Prevent websites from knowing where you came from. Disabling may break some sites.
     
     Values :
         
         -   Recommended : 0
-            Choices : 0 , 1 , 2
             Id : network.http.sendRefererHeader
+            
+            Choices : 
+                
+                -   Description : Disable referrer headers.
+                    Value : 0
+                    
+                -   Description : Send only when clicking a link.
+                    Value : 1
+                    
+                -   Description : Send for links and images.
+                    Value : 2 
 
         -   Recommended : false
             Id : network.http.sendSecureXSiteReferrer
         
         -   Recommended : true
             Id : network.http.referer.spoofSource
-        
-        -   Recommended : true
-            Id : network.IDN_show_punycode
-        
-        -   Recommended : false
-            Id : network.cookie.alwaysAcceptSessionCookies
 
-Browser :
+Pings :
     
-    Description : Disable disk caching, formfill, ping sending, and geoip
+    Description : Prevent websites from tracking clicks via pinging.
 
     Values :
 
+        -   Recommended : false
+            Id : browser.send_pings
+
+        -   Recommended : true
+            Id : browser.send_pings.require_same_host
+
+Cache :
+    
+    Description : Disable disk caching.
+    
+    Values :
+        
         -   Recommended : false
             Id: browser.cache.disk.enable
 
@@ -88,36 +112,45 @@ Browser :
         -   Recommended : false
             Id : browser.cache.insecure.enable
 
+Forms :
+    
+    Description : Disable automatic filling of login, credit card & shipping forms.
+    
+    Values :
+        
         -   Recommended : false
-            Id : browser.formfil.enable
+            Id : browser.formfil.enable 
 
-        -   Recommended : ""
-            Id : browser.search.geoip.url
+Battery :
 
-        -   Recommended : false
-            Id : browser.send_pings
-
-        -   Recommended : true
-            Id : browser.send_pings.require_same_host
-
-DOM :
-
-    Description : Disable control over your right-click and clipboard, battery percentage
+    Description : Prevent pages from reading your battery level.
 
     Values : 
-
-        -   Recommended : false
-            Id : dom.event.clipboardevents.enabled
-
+        
         -   Recommended : false
             Id : dom.battery.enabled
 
+Clipboard :
+    
+    Description : Prevent websites from blocking copy / pasting and block events for copy, paste, cut and selection.
+    
+    Values :
+        
+        -   Recommended : false
+            Id : dom.event.clipboardevents.enabled
+
+ContextMenu :
+    
+    Description : Prevent websites from disabling right-clicking.
+    
+    Values :
+        
         -   Recommended : false
             Id : dom.event.contextmenu.enabled
 
-Security : 
+Connection : 
 
-    Description : Require safe SSL negotiation, disable 0rtt data and false SSL starts, and isolate firstparty
+    Description : Require safe SSL negotiation, disable 0rtt data and false SSL starts.
 
     Values : 
         
@@ -130,32 +163,50 @@ Security :
         -   Recommended : false
             Id : security.tls.enable_0rtt_data
 
+Cookies :
+    
+    Description : Disable super / session - cookies.
+    
+    Values :
+        
         -   Recommended : true
             Id : privacy.firstparty.isolate
+            
+        -   Recommended : false
+            Id : network.cookie.alwaysAcceptSessionCookies
+
+WebRTC :
+    
+    Description : Prevent WebRTC from leaking your IP.
+    
+    Values :
         
         -   Recommended : false
             Id : media.peerconnection.enabled
 
-Geo : 
+Location : 
     
-    Description : Disable geolocation
+    Description : Disable geolocation and it's logging.
 
     Value : 
 
         -   Recommended : false
             Id : geo.enabled
         
-        -   Recommended : ""
+        -   Recommended : blank
             Id : geo.wifi.uri
+            
+        -   Recommended : blank
+            Id : browser.search.geoip.url
 
-Plugin :
+Extensions :
 
-    Description : Disable scanning for plugins for fingerprint or detecting adblock, and disable site reading installed plugins.
+    Description : Prevent pages from reading what extensions you have installed.
 
     Value : 
 
         -   Recommended : false
             Id : plugin.scan.plid.all
         
-        -   Recommended : ""
+        -   Recommended : blank
             Id : plugins.enumerable_names
